@@ -47,6 +47,8 @@ app.get('/torrent/:filename', function(req, res) {
 app.get('/torrent/', function(req, res) {
 	var archive = archiver.create('zip', {});
 	var filename = client.torrent.name + '.zip';
+  console.log(filename);
+  alert(filename);
 	res.set('Content-Type', 'application/zip');
 	res.set('Content-disposition', 'attachment; filename=' + filename);
 	archive.pipe(res);
