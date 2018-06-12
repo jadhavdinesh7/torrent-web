@@ -52,6 +52,7 @@ app.get('/torrent/', function(req, res) {
 	archive.pipe(res);
 	client.files.forEach(function(file) {
 		archive.append(file.createReadStream(), {name: file.path});
+     console.log(file.path);
 	});
 	archive.finalize();
 });
